@@ -1,0 +1,18 @@
+name = "orbit-ai-api"
+main = "src/index.js"
+compatibility_date = "2026-09-15"
+workers_dev = true
+
+[vars]
+# Comma-separated exact frontend origins. Add your production domain.
+ALLOWED_ORIGINS = "http://localhost:5173,http://127.0.0.1:5173"
+GROQ_MODEL = "llama-3.3-70b-versatile"
+MAX_INPUT_CHARS = "16000"
+MAX_MESSAGES = "30"
+RATE_LIMIT_PER_MINUTE = "12"
+
+# Set these as secrets/variables using `wrangler secret put` or Cloudflare dashboard:
+# GROQ_API_KEY (secret)
+# FIREBASE_PROJECT_ID (variable; project ID only)
+# For production, configure a Cloudflare rate-limiting rule or Durable Object if you need
+# a globally consistent per-user quota. The in-memory limiter below is best-effort per isolate.
